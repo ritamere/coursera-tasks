@@ -1,0 +1,41 @@
+/* Выведите в лексикографическом порядке все последовательности длины nn,
+состоящие из чисел от 1 до mm. Каждое число может встречаться в последовательности 
+сколько угодно раз или не встречаться совсем. */
+
+#include <vector>
+#include <fstream>
+
+using namespace std;
+
+ifstream cin("input.txt");
+ofstream cout("output.txt");
+
+int n{2}, m{3};
+vector<int> a;
+
+void out() {
+  for (int i = 0; i < n; i++) {
+      if(i) {
+        cout << " ";
+      cout << a[i];
+      }
+  cout << endl;
+  }
+}
+
+void rec(int idx) {
+  if (idx == n) {
+    out();
+    return;
+  }
+  for (int i = 1; i <= m; i++) {
+    a[idx] = i;
+    rec(idx + 1);
+  }
+}
+
+int main() {
+  cin >> n >> m;
+  a = vector <int> (n);
+  rec(0);
+}
