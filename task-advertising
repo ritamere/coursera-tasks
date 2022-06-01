@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+
+struct Advertising {
+  int ads;
+  double percent;
+  double average;
+};
+
+void printInfo(Advertising data) {
+  double totalBank = data.ads * data.percent/100 * data.average; 
+  cout << "Total bank is: " << totalBank;
+}
+
+int main() {
+  Advertising day;
+  cout << "Ad today: ";
+  cin >> day.ads;
+  cout << "Percent today: ";
+  cin >> day.percent;
+  cout << "Average today: ";
+  cin >> day.average;
+
+  printInfo(day);
+}
