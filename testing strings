@@ -1,0 +1,19 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+  cout << "Enter your full name: ";
+  string userName;
+  getline (cin, userName);
+
+  cout << "Now enter your age: ";
+  int userAge;
+  cin >> userAge;
+  cin.ignore(32767, '\n');
+  
+  float liveFor = float(userAge) / userName.length();
+  cout << "You've lived " << liveFor << " years for each letter in '\n' your name." ;
+
+}/* Функция getline() принимает istream и string , а не целое число*/
